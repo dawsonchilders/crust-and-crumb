@@ -1,5 +1,4 @@
 import { Component } from 'react';
-
 import { signUp } from '../../utilities/users-service';
 
 export default class SignUpForm extends Component {
@@ -17,8 +16,6 @@ export default class SignUpForm extends Component {
       error: ''
     });
   };
-
-  
 
   handleSubmit = async (evt) => {
     evt.preventDefault();
