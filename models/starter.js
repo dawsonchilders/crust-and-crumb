@@ -10,9 +10,9 @@ const starterSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  notes: {
+  notes: [{
     type: String,
-  },
+  }],
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',

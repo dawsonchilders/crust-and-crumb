@@ -1,0 +1,11 @@
+import sendRequest from './send-request';
+
+const BASE_URL = '/api/starters';
+
+export function getAll() {
+  return sendRequest(BASE_URL);
+}
+
+export function createStarter(starterData) {
+  return sendRequest(BASE_URL, 'POST', starterData);
+}
