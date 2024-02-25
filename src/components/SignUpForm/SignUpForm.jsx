@@ -1,4 +1,5 @@
 import { Component } from 'react';
+
 import { signUp } from '../../utilities/users-service';
 
 export default class SignUpForm extends Component {
@@ -10,37 +11,28 @@ export default class SignUpForm extends Component {
     error: ''
   };
 
-  //Event handler functions need to be written as class fields
-  //and have an arrow function attached to it
-
   handleChange = (evt) => {
-    // the provided object will be MERGED with the current state object
     this.setState({
       [evt.target.name]: evt.target.value,
       error: ''
     });
   };
 
+  
+
   handleSubmit = async (evt) => {
-    // prevents the form from being submitted to the server
-    // necessary for preventing a full page refresh
     evt.preventDefault();
     try {
       const {name, email, password} = this.state;
       const formData = {name, email, password};
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await signUp(formData);
       this.props.setUser(user);
+      
     } catch {
-      // An error occured
-      // Probably due to a duplicate email
       this.setState({ error: 'Sign Up Failed - Try Again' })
     }
   };
 
-  // the render method is the equivalent to a function component
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (

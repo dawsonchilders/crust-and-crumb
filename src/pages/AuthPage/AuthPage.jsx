@@ -12,7 +12,8 @@ export default function AuthPage({ setUser }) {
 
   return (
     <main>
-      <h1>AuthPage</h1>
+      <h1>Welcome to Crust & Crumb</h1>
+      <h2>plese sign up or log in</h2>
       <button onClick={toggleForms}>
         {showLogin ? 'Sign Up' : 'Login'}
       </button>
