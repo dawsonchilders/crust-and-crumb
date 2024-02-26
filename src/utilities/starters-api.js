@@ -9,3 +9,7 @@ export function getAll() {
 export function createStarter(starterData) {
   return sendRequest(BASE_URL, 'POST', starterData);
 }
+
+export function deleteStarter(starterId) {
+  return sendRequest(`${BASE_URL}/${starterId}`, 'DELETE')
+}

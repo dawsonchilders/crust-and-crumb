@@ -19,11 +19,20 @@ export default function MyStartersPage() {
     setStarters([...starters, newStarter]);
   };
 
+  const deleteStarter = async (starterId) => {
+    await startersApi.deleteStarter(starterId);
+    setStarters(starters.filter(starter => starter._id !== starterId));
+  };
+
   return (
     <div>
       <StarterForm addStarter={addStarter} />
       {starters.map((starter) => (
-        <div key={starter._id}>{starter.name}</div>
+         <div key={starter._id}>
+           {starter.name}
+           <button onClick={() => deleteStarter(starter._id)}>Delete</button>
+           
+         </div>
       ))}
     </div>
   );

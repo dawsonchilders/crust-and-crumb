@@ -7,11 +7,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.post('/', ensureLoggedIn, startersCtrl.create);
 // GET /api/starters
 router.get('/', ensureLoggedIn, startersCtrl.index);
-// GET (by id) /api/starters/:id
-
-// PUT (edit a starter) /api/starters/:id
-
-// DELETE /api/starters/:id
-
+// DELETE '/:id'
+router.delete('/:id', ensureLoggedIn, startersCtrl.delete);
 
 module.exports = router;

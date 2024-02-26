@@ -3,8 +3,6 @@ const Starter = require('../../models/starter');
 module.exports = {
   create,
   index,
-  show,
-  update,
   delete: deleteStarter
 }
 
@@ -28,14 +26,12 @@ async function index(req, res) {
   }
 }
 
-async function show(req, res) {
-
-}
-
-async function update(req, res) {
-
-}
-
 async function deleteStarter(req, res) {
-
+  try {
+    await Starter.findByIdAndDelete(req.params.id);
+    const starters = await Starter.find({ userId: req.user._id }).sort('createdAt');
+    res.json(starters);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
