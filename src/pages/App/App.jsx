@@ -17,9 +17,20 @@ export default function App() {
       <NavBar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={user ? <Navigate replace to="/starters" /> : <AuthPage setUser={setUser} />} />
-        <Route path="/starters" element={user ? <MyStartersPage /> : <Navigate replace to="/login" />} />
-        <Route path="/bakes" element={user ? <MyBakesPage /> : <Navigate replace to="/login" />} />
+        {user ? (
+          <>
+            <Route path="/starters" element={<MyStartersPage />} />
+            <Route path="/bakes" element={<MyBakesPage />} />
+            <Route path="/*" element={<Navigate to="/starters" />} />
+          </>
+        ) : (
+          <>
+            <Route path="/login" element={<AuthPage setUser={setUser} />} />
+            <Route path="/starters" element={<Navigate to="/login" />} />
+            <Route path="/bakes" element={<Navigate to="/login" />} />
+            <Route path="/*" element={<Navigate to="/login" />} />
+          </>
+        )}
       </Routes>
     </main>
   );
