@@ -5,6 +5,7 @@ import * as startersApi from '../../utilities/starters-api';
 
 export default function MyStartersPage() {
   const [starters, setStarters] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const fetchStarters = async () => {
@@ -14,9 +15,14 @@ export default function MyStartersPage() {
     fetchStarters();
   }, []);
 
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  }
+
   const addStarter = async (starter) => {
     const newStarter = await startersApi.createStarter(starter);
     setStarters([...starters, newStarter]);
+    setShowForm(false);
   };
 
   const deleteStarter = async (starterId) => {
@@ -26,7 +32,9 @@ export default function MyStartersPage() {
 
   return (
     <div>
-      <StarterForm addStarter={addStarter} />
+      <h1>My Starters</h1>
+      <button onClick={toggleForm}>{showForm ? 'Hide Form' : 'Add Starter'}</button>
+      {showForm && <StarterForm addStarter={addStarter} />}
       {starters.map((starter) => (
          <div key={starter._id}>
            <div>{starter.name}</div>
