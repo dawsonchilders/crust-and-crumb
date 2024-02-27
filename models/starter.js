@@ -6,24 +6,8 @@ const starterSchema = new Schema({
     type: String,
     required: true,
   },
-  notes: [{
+  notes: {
     type: String,
-  }],
-  createdOn: {
-    type: Date,
-    required: true
-  },
-  feedingSchedule: {
-    type: String,
-    required: true
-  },
-  hydrationLevel: {
-    type: Number,
-    required: true
-  },
-  flourType: {
-    type: String,
-    required: true
   },
   userId: {
     type: Schema.Types.ObjectId,

@@ -29,7 +29,8 @@ export default function MyStartersPage() {
       <StarterForm addStarter={addStarter} />
       {starters.map((starter) => (
          <div key={starter._id}>
-           {starter.name}
+           <div>{starter.name}</div>
+           <div>{starter.notes}</div>
            <button onClick={() => deleteStarter(starter._id)}>Delete</button>
            
          </div>
