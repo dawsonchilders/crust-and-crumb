@@ -6,6 +6,7 @@ import * as startersApi from '../../utilities/starters-api';
 export default function MyStartersPage() {
   const [starters, setStarters] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [editStarterId, setEditStarterId] = useState(null);
 
   useEffect(() => {
     const fetchStarters = async () => {
@@ -17,6 +18,7 @@ export default function MyStartersPage() {
 
   const toggleForm = () => {
     setShowForm(!showForm);
+    setEditStarterId(null);
   }
 
   const addStarter = async (starter) => {
@@ -30,16 +32,26 @@ export default function MyStartersPage() {
     setStarters(starters.filter(starter => starter._id !== starterId));
   };
 
+  const updateStarter = async (starterId, updatedData) => {
+    const updatedStarter = await startersApi.updateStarter(starterId, updatedData);
+    setStarters(starters.map(starter => starter._id === starterId ? updatedStarter : starter));
+    setEditStarterId(null);
+  }
+
   return (
     <div>
       <h1>My Starters</h1>
-      <button onClick={toggleForm}>{showForm ? 'Hide Form' : 'Add Starter'}</button>
-      {showForm && <StarterForm addStarter={addStarter} />}
+      <button onClick={toggleForm}>{showForm ? 'Hide' : 'Add Starter'}</button>
+      {showForm && <StarterForm onSubmit={addStarter} />}
       {starters.map((starter) => (
          <div key={starter._id}>
            <div>{starter.name}</div>
            <div>{starter.notes}</div>
            <button onClick={() => deleteStarter(starter._id)}>Delete</button>
+           <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
+           {editStarterId === starter._id && (
+            <StarterForm initialData={starter} onSubmit={(formData) => updateStarter(starter._id, formData)} />
+           )}
            
          </div>
       ))}

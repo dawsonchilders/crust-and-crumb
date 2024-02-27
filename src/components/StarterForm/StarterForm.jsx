@@ -1,10 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function StarterForm({ addStarter }) {
+export default function StarterForm({ onSubmit, initialData = null }) {
   const [starterData, setStarterData] = useState({
     name: '',
     notes: '',
   });
+
+  useEffect(() => {
+    if (initialData) {
+      setStarterData({
+        name: initialData.name,
+        notes: initialData.notes,
+      });
+    } else {
+      setStarterData({ name: '', notes: '' })
+    }
+  }, [initialData]);
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
@@ -14,10 +25,9 @@ export default function StarterForm({ addStarter }) {
     }));
   };
 
-
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    addStarter(starterData);
+    onSubmit(starterData);
     setStarterData({name: '', notes: ''});
   };
 
@@ -37,7 +47,7 @@ export default function StarterForm({ addStarter }) {
         onChange={handleChange}
         placeholder="Notes"
       />
-      <button type="submit">Create Starter</button>
+      <button type="submit">Add</button>
     </form>
   );
 }

@@ -9,5 +9,7 @@ router.post('/', ensureLoggedIn, startersCtrl.create);
 router.get('/', ensureLoggedIn, startersCtrl.index);
 // DELETE '/:id'
 router.delete('/:id', ensureLoggedIn, startersCtrl.delete);
+// PUT '/:id' for editing a starter
+router.put('/:id', ensureLoggedIn, startersCtrl.update);
 
 module.exports = router;

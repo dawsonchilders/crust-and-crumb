@@ -10,6 +10,10 @@ export function createStarter(starterData) {
   return sendRequest(BASE_URL, 'POST', starterData);
 }
 
+export function updateStarter(starterId, starterData) {
+  return sendRequest(`${BASE_URL}/${starterId}`, 'PUT', starterData);
+}
+
 export function deleteStarter(starterId) {
   return sendRequest(`${BASE_URL}/${starterId}`, 'DELETE')
 }
