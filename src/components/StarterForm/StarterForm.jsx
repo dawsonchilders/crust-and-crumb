@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './StarterForm.css'
 
 export default function StarterForm({ onSubmit, initialData = null }) {
   const [starterData, setStarterData] = useState({

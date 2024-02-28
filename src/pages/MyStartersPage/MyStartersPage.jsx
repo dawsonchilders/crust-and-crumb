@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import StarterForm from '../../components/StarterForm/StarterForm';
+import './MyStartersPage.css'
 import * as startersApi from '../../utilities/starters-api';
 
 
@@ -43,19 +44,20 @@ export default function MyStartersPage() {
       <h1>My Starters</h1>
       <button onClick={toggleForm}>{showForm ? 'Hide' : 'Add Starter'}</button>
       {showForm && <StarterForm onSubmit={addStarter} />}
-      {starters.map((starter) => (
-         <div key={starter._id}>
-           <div>{starter.name}</div>
-           <div>{starter.notes}</div>
-           <div>{starter.flours}</div>
-           <button onClick={() => deleteStarter(starter._id)}>Delete</button>
-           <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
-           {editStarterId === starter._id && (
-            <StarterForm initialData={starter} onSubmit={(formData) => updateStarter(starter._id, formData)} />
-           )}
-           
-         </div>
+      <div className="Starters-Container">
+        {starters.map((starter) => (
+          <div key={starter._id} className="Starter-Box">
+            <div>{starter.name}</div>
+            <div>{starter.notes}</div>
+            <div>{starter.flours}</div>
+            <button onClick={() => deleteStarter(starter._id)}>Delete</button>
+            <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
+            {editStarterId === starter._id && (
+              <StarterForm initialData={starter} onSubmit={(formData) => updateStarter(starter._id, formData)} />
+            )}
+          </div>
       ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,28 @@
+nav {
+  text-align: center;
+  padding: 10px 0; 
+}
+
+nav a {
+  color: white;
+  background-color: #743089;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #7e57c2;
+  color: #000;
+  
+}
+
+nav span {
+  color: white;
+  background-color: #743089;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
