@@ -11,24 +11,26 @@ export default function StarterForm({ onSubmit, initialData = null }) {
       setStarterData({
         name: initialData.name,
         notes: initialData.notes,
+        flours: initialData.flours,
       });
     } else {
-      setStarterData({ name: '', notes: '' })
+      setStarterData({ name: '', notes: '', flours: '' })
     }
   }, [initialData]);
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-    setStarterData(prevData => ({
+      setStarterData(prevData => ({
       ...prevData,
       [name]: value,
     }));
-  };
+   };
+  
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     onSubmit(starterData);
-    setStarterData({name: '', notes: ''});
+    setStarterData({name: '', notes: '', flours: ''});
   };
 
   return (
@@ -46,6 +48,13 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         value={starterData.notes}
         onChange={handleChange}
         placeholder="Notes"
+      />
+      <input
+        name="flours"
+        type="text"
+        value={starterData.flours}
+        onChange={handleChange}
+        placeholder="Flours Used"
       />
       <button type="submit">Add</button>
     </form>

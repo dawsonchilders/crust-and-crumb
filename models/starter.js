@@ -9,6 +9,9 @@ const starterSchema = new Schema({
   notes: {
     type: String,
   },
+  flours: {
+    type: String,
+  },
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',

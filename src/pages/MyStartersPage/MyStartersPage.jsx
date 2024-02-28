@@ -47,6 +47,7 @@ export default function MyStartersPage() {
          <div key={starter._id}>
            <div>{starter.name}</div>
            <div>{starter.notes}</div>
+           <div>{starter.flours}</div>
            <button onClick={() => deleteStarter(starter._id)}>Delete</button>
            <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
            {editStarterId === starter._id && (
