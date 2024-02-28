@@ -1,4 +1,9 @@
 form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  /* align-items: center; */
   padding: 10px;
   background-color: #777777;
   border: 1px solid #333333;

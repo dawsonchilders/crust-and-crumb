@@ -5,6 +5,7 @@ export default function StarterForm({ onSubmit, initialData = null }) {
   const [starterData, setStarterData] = useState({
     name: '',
     notes: '',
+    feedingSchedule: '',
   });
 
   useEffect(() => {
@@ -13,9 +14,15 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         name: initialData.name,
         notes: initialData.notes,
         flours: initialData.flours,
+        feedingSchedule: initialData.feedingSchedule,
       });
     } else {
-      setStarterData({ name: '', notes: '', flours: '' })
+      setStarterData({ 
+        name: '', 
+        notes: '', 
+        flours: '',
+        feedingSchedule: '', 
+      })
     }
   }, [initialData]);
 
@@ -57,6 +64,18 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         onChange={handleChange}
         placeholder="Flours Used"
       />
+      <select 
+        name="feedingSchedule"
+        value={starterData.feedingSchedule}
+        onChange={handleChange}
+      >
+        <option value="">Select Feeding Schedule</option>
+        <option value="8 hours">Every 8 hours</option>
+        <option value="10 hours">Every 10 hours</option>
+        <option value="12 hours">Every 12 hours</option>
+        <option value="Weekly">Every week</option>
+        <option value="Bi-Weekly">Every 2 weeks</option>
+      </select>
       <button type="submit">Add</button>
     </form>
   );

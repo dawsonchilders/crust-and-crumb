@@ -12,6 +12,9 @@ const starterSchema = new Schema({
   flours: {
     type: String,
   },
+  feedingSchedule: {
+    type: String,
+  },
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',

@@ -21,6 +21,7 @@ export default function App() {
           <>
             <Route path="/starters" element={<MyStartersPage />} />
             <Route path="/bakes" element={<MyBakesPage />} />
+            <Route path="/*" element={<Navigate to="/starters" /> }/>
           </>
           : 
           <>
