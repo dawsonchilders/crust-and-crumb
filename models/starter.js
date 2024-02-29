@@ -15,6 +15,9 @@ const starterSchema = new Schema({
   feedingSchedule: {
     type: String,
   },
+  createdOn: {
+    type: Date,
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',

@@ -47,14 +47,16 @@ export default function MyStartersPage() {
       <div className="starters-container">
         {starters.map((starter) => (
           <div key={starter._id} className="starter-box">
-            <h4>Name:</h4>
+            <label>Name</label>
             <div>{starter.name}</div>
-            <h4>Notes:</h4>
+            <label>Notes</label>
             {starter.notes && <div>{starter.notes}</div>}
-            <h4>Flour Used:</h4>
+            <label>Flour Used</label>
             {starter.flours && <div>{starter.flours}</div>}
-            <h4>Feeding Schedule:</h4>
+            <label>Feeding Schedule</label>
             {starter.feedingSchedule && <div>{starter.feedingSchedule}</div>}
+            <label>Created On Date</label>
+            <div>{starter.createdOn && new Date(starter.createdOn).toDateString()}</div>
             <button onClick={() => deleteStarter(starter._id)}>Delete</button>
             <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
             {editStarterId === starter._id && (

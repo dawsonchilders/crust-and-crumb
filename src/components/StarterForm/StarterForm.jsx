@@ -6,6 +6,7 @@ export default function StarterForm({ onSubmit, initialData = null }) {
     name: '',
     notes: '',
     feedingSchedule: '',
+    createdOn: '',
   });
 
   useEffect(() => {
@@ -15,13 +16,15 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         notes: initialData.notes,
         flours: initialData.flours,
         feedingSchedule: initialData.feedingSchedule,
+        createdOn: initialData.createdOn,
       });
     } else {
       setStarterData({ 
         name: '', 
         notes: '', 
         flours: '',
-        feedingSchedule: '', 
+        feedingSchedule: '',
+        createdOn: '', 
       })
     }
   }, [initialData]);
@@ -38,7 +41,7 @@ export default function StarterForm({ onSubmit, initialData = null }) {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     onSubmit(starterData);
-    setStarterData({name: '', notes: '', flours: ''});
+    setStarterData({name: '', notes: '', flours: '', createdOn: ''});
   };
 
   return (
@@ -76,6 +79,13 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         <option value="Weekly">Every week</option>
         <option value="Bi-Weekly">Every 2 weeks</option>
       </select>
+      <input 
+        type="date"
+        name="createdOn"
+        value={starterData.createdOn}
+        onChange={handleChange} 
+        placeholder="Created On"
+      />
       <button type="submit">Add</button>
     </form>
   );

@@ -23,6 +23,7 @@ export default function NavBar({ user, setUser }) {
         : 
         <>
           <Link to="/login">Log In/Sign Up</Link>
+          <Link to="/">Home</Link>
         </>
       }
     </nav>
