@@ -1,4 +1,3 @@
-/* CSS Custom Properties */
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -6,16 +5,14 @@
 body {
   margin: 0;
   font-family: futura;
+  color: #ffffff;
   background-color: #585A59;
   padding: 2vmin;
   height: 100vh;
 }
 
-.form-container {
-  padding: 3vmin;
-  background-color: #FFFFFF;
-  border: .1vmin solid #FFFFFF;
-  border-radius: 1vmin;
+h1 {
+  color: black;
 }
 
 p.error-message {
@@ -63,11 +60,13 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; 
 }
 
 button:hover {
   background-color: #7e57c2;
   color: #000;
+  transform: scale(1.05);
 }
 
 button.btn-sm {
