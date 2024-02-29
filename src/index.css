@@ -1,15 +1,4 @@
 /* CSS Custom Properties */
-:root {
-  --white: #FFFFFF;
-  --grey-1: #999C9B;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --grey-4: #585A59;
-  --purple: #743089;
-  --text-light: #000000;
-  --text-dark: #000000;
-}
-
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -17,20 +6,20 @@
 body {
   margin: 0;
   font-family: futura;
-  background-color: var(--grey-4);
+  background-color: #585A59;
   padding: 2vmin;
   height: 100vh;
 }
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--grey-1);
-  border: .1vmin solid var(--tan-3);
+  background-color: #FFFFFF;
+  border: .1vmin solid #FFFFFF;
   border-radius: 1vmin;
 }
 
 p.error-message {
-  color: var(--purple);
+  color: #743089;
   text-align: center;
 }
 
@@ -38,7 +27,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: var(--text-light);
+  color: #000000;
 }
 
 label {
@@ -50,27 +39,27 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid #FFFFFF;
   border-radius: .5vmin;
-  color: var(--text-dark);
+  color: #000000;
   background-image: none !important;
   outline: none;
 }
 
 input:focus {
-  border-color: var(--purple);
+  border-color: #743089;
 }
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
-  color: var(--white);
-  background-color: var(--purple);
+  color: #FFFFFF;
+  background-color: #743089;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid #FFFFFF;
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
@@ -88,7 +77,7 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--grey-4);
+  background-color: #585A59;
 }
 
 button[type="submit"] {
