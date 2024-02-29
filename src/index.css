@@ -65,6 +65,11 @@ button, a.button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #7e57c2;
+  color: #000;
+}
+
 button.btn-sm {
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;

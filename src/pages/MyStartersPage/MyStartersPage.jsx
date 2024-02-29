@@ -24,7 +24,7 @@ export default function MyStartersPage() {
 
   const addStarter = async (starter) => {
     const newStarter = await startersApi.createStarter(starter);
-    setStarters([...starters, newStarter]);
+    setStarters([newStarter, ...starters]);
     setShowForm(false);
   };
 
@@ -44,13 +44,13 @@ export default function MyStartersPage() {
       <h1>My Starters</h1>
       <button onClick={toggleForm}>{showForm ? 'Hide' : 'Add Starter'}</button>
       {showForm && <StarterForm onSubmit={addStarter} />}
-      <div className="Starters-Container">
+      <div className="starters-container">
         {starters.map((starter) => (
-          <div key={starter._id} className="Starter-Box">
+          <div key={starter._id} className="starter-box">
             <div>NAME: {starter.name}</div>
-            <div>NOTES: {starter.notes}</div>
-            <div>FLOUR USED: {starter.flours}</div>
-            <div>FEED EVERY: {starter.feedingSchedule}</div>
+            {starter.notes && <div>NOTES: {starter.notes}</div>}
+            {starter.flours && <div>FLOUR USED: {starter.flours}</div>}
+            {starter.feedingSchedule && <div>FEED EVERY: {starter.feedingSchedule}</div>}
             <button onClick={() => deleteStarter(starter._id)}>Delete</button>
             <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
             {editStarterId === starter._id && (
