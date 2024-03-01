@@ -1,41 +1,19 @@
 import { useState, useEffect } from 'react';
 import StarterForm from '../../components/StarterForm/StarterForm';
 import './MyStartersPage.css'
-import * as startersApi from '../../utilities/starters-api';
 
 
-export default function MyStartersPage() {
-  const [starters, setStarters] = useState([]);
+export default function MyStartersPage({ starters, addStarter, updateStarter, deleteStarter }) {
   const [showForm, setShowForm] = useState(false);
   const [editStarterId, setEditStarterId] = useState(null);
 
   useEffect(() => {
-    const fetchStarters = async () => {
-      const data = await startersApi.getAll();
-      setStarters(data);
-    };
-    fetchStarters();
-  }, []);
+    setShowForm(false);
+    setEditStarterId(null);
+  }, [starters]);
 
   const toggleForm = () => {
     setShowForm(!showForm);
-    setEditStarterId(null);
-  }
-
-  const addStarter = async (starter) => {
-    const newStarter = await startersApi.createStarter(starter);
-    setStarters([newStarter, ...starters]);
-    setShowForm(false);
-  };
-
-  const deleteStarter = async (starterId) => {
-    await startersApi.deleteStarter(starterId);
-    setStarters(starters.filter(starter => starter._id !== starterId));
-  };
-
-  const updateStarter = async (starterId, updatedData) => {
-    const updatedStarter = await startersApi.updateStarter(starterId, updatedData);
-    setStarters(starters.map(starter => starter._id === starterId ? updatedStarter : starter));
     setEditStarterId(null);
   }
 
@@ -49,14 +27,26 @@ export default function MyStartersPage() {
           <div key={starter._id} className="starter-box">
             <label>Name</label>
             <div>{starter.name}</div>
-            <label>Notes</label>
-            {starter.notes && <div>{starter.notes}</div>}
-            <label>Flour Used</label>
-            {starter.flours && <div>{starter.flours}</div>}
-            <label>Feeding Schedule</label>
-            {starter.feedingSchedule && <div>{starter.feedingSchedule}</div>}
-            <label>Created On Date</label>
-            <div>{starter.createdOn && new Date(starter.createdOn).toDateString()}</div>
+            {starter.notes && 
+            <>
+              <label>Notes</label>
+              <div>{starter.notes}</div>
+            </>}
+            {starter.flours && 
+            <>
+              <label>Flours Used</label>
+              <div>{starter.flours}</div>
+            </>}
+            {starter.feedingSchedule && 
+            <>
+              <label>Feeding Schedule</label>
+              <div>{starter.feedingSchedule}</div>
+            </>}
+            {starter.createdOn && 
+            <>
+              <label>Created On Date</label>
+              <div>{starter.createdOn && new Date(starter.createdOn).toDateString()}</div>
+            </>}
             <button onClick={() => deleteStarter(starter._id)}>Delete</button>
             <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
             {editStarterId === starter._id && (
