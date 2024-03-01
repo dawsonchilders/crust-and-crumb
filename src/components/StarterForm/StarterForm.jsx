@@ -46,27 +46,28 @@ export default function StarterForm({ onSubmit, initialData = null }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label>Name</label>
       <input 
         name="name"
         type="text" 
         value={starterData.name} 
         onChange={handleChange} 
-        placeholder="Starter Name" 
         required 
       />
+      <label>Notes</label>
       <textarea 
         name="notes"
         value={starterData.notes}
         onChange={handleChange}
-        placeholder="Notes"
       />
+      <label>Flours Used</label>
       <input
         name="flours"
         type="text"
         value={starterData.flours}
         onChange={handleChange}
-        placeholder="Flours Used"
       />
+      <label>Feeding Schedule</label>
       <select 
         name="feedingSchedule"
         value={starterData.feedingSchedule}
@@ -79,12 +80,12 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         <option value="Weekly">Every week</option>
         <option value="Bi-Weekly">Every 2 weeks</option>
       </select>
+      <label>Created On Date</label>
       <input 
         type="date"
         name="createdOn"
         value={starterData.createdOn}
         onChange={handleChange} 
-        placeholder="Created On"
       />
       <button type="submit">Add</button>
     </form>
