@@ -1,0 +1,9 @@
+.home-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.home-container p {
+  max-width: 600px;
+  margin: 20px auto;
+}
