@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import * as startersApi from '../../utilities/starters-api';
 import AuthPage from '../AuthPage/AuthPage';
-import MyBakesPage from '../MyBakesPage/MyBakesPage';
+import MyPhotosPage from '../MyPhotosPage/MyPhotosPage';
 import MyStartersPage from '../MyStartersPage/MyStartersPage';
 import HomePage from './HomePage/HomePage';
 import NavBar from '../../components/NavBar/NavBar';
@@ -52,7 +52,7 @@ export default function App() {
         {user ?
           <>
             <Route path="/starters" element={<MyStartersPage starters={starters} addStarter={addStarter} updateStarter={updateStarter} deleteStarter={deleteStarter} />} />
-            <Route path="/bakes" element={<MyBakesPage />} />
+            <Route path="/photos" element={<MyPhotosPage />} />
             <Route path="/*" element={<Navigate to="/starters" /> }/>
           </>
           : 

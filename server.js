@@ -33,6 +33,7 @@ app.listen(port, function() {
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/starters', ensureLoggedIn, require('./routes/api/starters'));
+app.use('/api/photos', ensureLoggedIn, require('./routes/api/photos'));
 // Protect all routes below from anonymous users
 // const ensureLoggedIn = require('./config/ensureLoggedIn');
 
