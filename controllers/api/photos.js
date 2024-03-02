@@ -3,7 +3,8 @@ const Photo = require('../../models/photo');
 
 module.exports = {
   index,
-  upload
+  upload,
+  delete: deletePhoto
 };
 
 async function index(req, res) {
@@ -26,6 +27,16 @@ async function upload(req, res) {
     }
   } catch (err) {
     res.status(400).json(err.message);
+  }
+}
+
+async function deletePhoto(req, res) {
+  try {
+    await Photo.findByIdAndDelete(req.params.id);
+    const Photos = await Photo.find({ user: req.user._id });
+    res.json(Photos);
+  } catch (err) {
+    res.status(400).json(err);
   }
 }
 

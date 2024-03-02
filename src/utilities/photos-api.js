@@ -9,3 +9,7 @@ export function getAll() {
 export function upload(formData) {
   return sendRequest(`${BASE_URL}/upload`, 'POST', formData, true);
 }
+
+export function deletePhoto(photoId) {
+  return sendRequest(`${BASE_URL}/${photoId}`, 'DELETE');
+}

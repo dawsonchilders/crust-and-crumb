@@ -20,10 +20,9 @@ export default function PhotoUploadForm({ onUploadSuccess }) {
     }
   }
 
-
   return (
     <div>
-    <section className="flex-ctr-ctr">
+    <section>
       <input type="file" ref={fileInputRef} />
       <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" />
       <button onClick={handleUpload}>Upload Photo</button>

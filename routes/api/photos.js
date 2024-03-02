@@ -8,6 +8,9 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.get('/', ensureLoggedIn, photosCtrl.index);
 // POST /api/photos/upload
 router.post('/upload', upload.single('photo'), ensureLoggedIn, photosCtrl.upload);
+// DELETE /api/photos/:id
+router.delete('/:id', ensureLoggedIn, photosCtrl.delete);
+
 
 
 module.exports = router;

@@ -14,12 +14,17 @@ export default function MyPhotosPage() {
     setPhotos([newPhoto, ...photos]);
   }
 
+  async function handleDelete(photoId) {
+    await photosAPI.deletePhoto(photoId);
+    setPhotos(prevPhotos => prevPhotos.filter(photo => photo._id !== photoId));
+  }
+
   return (
     <div>
       <h1>My Photos</h1>
       <PhotoUploadForm onUploadSuccess={handleUploadSuccess} />
       <div className="photo-gallery">
-        {photos.map(photo => <PhotoCard key={photo._id} photo={photo} />)}
+        {photos.map(photo => <PhotoCard key={photo._id} photo={photo} onDelete={handleDelete} />)}
       </div>
     </div>
   );
