@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import * as photosAPI from '../../utilities/photos-api';
+import './PhotoUpLoadForm.css';
 
 export default function PhotoUploadForm({ onUploadSuccess }) {
   const [title, setTitle] = useState('');
@@ -21,13 +22,12 @@ export default function PhotoUploadForm({ onUploadSuccess }) {
   }
 
   return (
-    <div>
-    <section>
-      <input type="file" ref={fileInputRef} />
-      <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" />
-      <button onClick={handleUpload}>Upload Photo</button>
+    <div className="photo-upload-container">
+    <section className="photo-upload-box">
+      <input type="file" ref={fileInputRef} className="file-input" />
+      <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" className="text-input" />
+      <button onClick={handleUpload} className="upload-btn">Upload Photo</button>
     </section>
     </div>
-
   );
 }

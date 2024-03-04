@@ -17,8 +17,8 @@ export default function NavBar({ user, setUser }) {
           {location.pathname !== '/starters' && <Link to="/starters">My Starters</Link>}
           {location.pathname !== '/photos' && <Link to="/photos">My Photos</Link>}
           {location.pathname !== '/' && <Link to="/">Home</Link>}
-          <Link to="/" onClick={handleLogOut}>Log Out</Link>
           <span>Welcome, {user.name}</span>
+          <Link to="/" onClick={handleLogOut}>Log Out</Link>
           </>
         : 
         <>

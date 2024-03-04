@@ -8,7 +8,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const photos = await Photo.find({userId: req.user._id}).sort('-createdAt').exec();
+  const photos = await Photo.find({user: req.user._id}).sort('-createdAt').exec();
   res.json(photos);
 }
 
@@ -19,7 +19,7 @@ async function upload(req, res) {
       const photoDoc = await Photo.create({
         url: photoURL,
         title: req.body.title,
-        userId: req.user._id
+        user: req.user._id
       });
       res.json(photoDoc);
     } else {

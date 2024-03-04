@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const photoSchema = new Schema({
   url: {type: String, required: true},
   title: String,
-  userId: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true
