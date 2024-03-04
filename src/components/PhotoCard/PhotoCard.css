@@ -1,22 +1,14 @@
-.PhotoCard {
-  display: grid;
-  grid-template-columns: 20vw;
-  grid-template-rows: auto auto;
+.photo-card { 
+  border: 1px solid #FFFFFF; 
+  border-radius: 5px;
+  overflow: hidden; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.PhotoCard div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 5vmin;
-  color: white;
-  background-color: grey;
-  font-size: 3vmin;
-  padding-bottom: .5vmin;
-}
-
-.PhotoCard img {
-  width: 100%;
-  border: .5vmin solid grey;
-  border-bottom: none;
+.photo-card img {
+  max-width: 300px;
+  max-height: 300px; 
+  height: auto;
+  width: auto; 
+  border-radius: 8px; 
 }

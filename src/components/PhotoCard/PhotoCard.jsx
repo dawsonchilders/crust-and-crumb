@@ -5,7 +5,7 @@ export default function PhotoCard({ photo, onDelete }) {
 
 
   return (
-    <article className="PhotoCard">
+    <article className="photo-card">
       <img src={photo.url} alt={photo.title} />
       <div>{photo.title}</div>
       <button onClick={handleDelete}>Delete</button>

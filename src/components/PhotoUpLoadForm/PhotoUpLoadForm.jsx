@@ -26,7 +26,7 @@ export default function PhotoUploadForm({ onUploadSuccess }) {
     <section className="photo-upload-box">
       <input type="file" ref={fileInputRef} className="file-input" />
       <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" className="text-input" />
-      <button onClick={handleUpload} className="upload-btn">Upload Photo</button>
+      <button onClick={handleUpload} className="upload-btn">Upload</button>
     </section>
     </div>
   );
