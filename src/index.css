@@ -21,8 +21,8 @@ p.error-message {
 }
 
 form, form:valid {
-  /* display: grid; */
-  /* grid-template-columns: 1fr 3fr; */
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   display: flex;
   flex-direction: column;
   width: 90%;

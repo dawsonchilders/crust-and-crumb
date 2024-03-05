@@ -53,8 +53,12 @@ export default function MyStartersPage({ starters, addStarter, updateStarter, de
               <div>{starter.createdOn && new Date(starter.createdOn).toDateString()}</div>
             </>} */}
             <div className="starter-actions">
-              <button onClick={() => deleteStarter(starter._id)}>Delete</button>
-              <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
+              {editStarterId !== starter._id && (
+                <>
+                  <button onClick={() => deleteStarter(starter._id)}>Delete</button>
+                  <button onClick={() => setEditStarterId(starter._id)}>Edit</button>
+                </>
+              )}
               {editStarterId === starter._id && (
                 <StarterForm initialData={starter} onSubmit={(formData) => updateStarter(starter._id, formData)} />
               )}

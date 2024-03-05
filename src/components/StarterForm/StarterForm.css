@@ -1,2 +1,60 @@
+.starter-form .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+  align-items: start;
+}
 
+.starter-form .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 10px;
+  align-items: flex-start;
+  grid-template-areas:
+    "name notes"
+    "flours notes"
+    "feeding notes"
+    "created notes";
+}
 
+.starter-form .name {
+  grid-area: name;
+}
+
+.starter-form .flours {
+  grid-area: flours;
+}
+
+.starter-form .feeding {
+  grid-area: feeding;
+}
+
+.starter-form .created {
+  grid-area: created;
+}
+
+.starter-form .notes {
+  grid-area: notes;
+  display: flex;
+  flex-direction: column;
+}
+
+.starter-form .form-group,
+.starter-form .notes {
+  display: flex;
+  flex-direction: column;
+}
+
+.starter-form .notes {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  grid-row: 1 / -1;
+  min-height: 100%;
+}
+
+.starter-form .grid-container .notes textarea {
+  flex-grow: 1;
+
+}

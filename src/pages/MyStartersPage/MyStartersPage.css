@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto 1fr;
   gap: 10px;
-  align-items: start;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@
 
 .starter-box {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "name notes"
     "flours notes"
     "schedule notes"
@@ -27,7 +27,7 @@
   padding: 20px;
   margin: 10px 0;
   width: 90%;
-  box-shadow: 0 2px 4px rgba(0,0,0,1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
 .starter-actions {
@@ -39,25 +39,43 @@
 }
 
 .starter-label {
-  display:block;
+  display: block;
   font-weight: bold;
   margin-bottom: 5px;
   color: chartreuse;
 }
 
-.starter-name { grid-area: name; }
-.starter-flours { grid-area: flours; }
-.starter-schedule { grid-area: schedule; }
-.starter-created { grid-area: created; }
-.starter-notes { grid-area: notes; }
-.starter-actions { grid-area: actions; }
+.starter-name {
+  grid-area: name;
+}
+
+.starter-flours {
+  grid-area: flours;
+}
+
+.starter-schedule {
+  grid-area: schedule;
+}
+
+.starter-created {
+  grid-area: created;
+}
+
+.starter-notes {
+  grid-area: notes;
+}
+
+.starter-actions {
+  grid-area: actions;
+}
 
 .starter-box h4 {
   margin: 0 0 5px 0;
   color: black;
 }
 
-.starter-box > div, .starter-box > form {
+.starter-box>div,
+.starter-box>form {
   padding: 10px;
   color: #FFFFFF;
   background-color: #2D2D30;
@@ -66,4 +84,3 @@
   margin-bottom: 10px;
   text-align: left;
 }
-
