@@ -4,7 +4,7 @@ import './NavBar.css';
 
 export default function NavBar({ user, setUser }) {
   const location = useLocation();
-  
+
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -12,15 +12,15 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      {user ? 
+      {user ?
         <>
           {location.pathname !== '/starters' && <Link to="/starters">My Starters</Link>}
           {location.pathname !== '/photos' && <Link to="/photos">My Photos</Link>}
           {location.pathname !== '/' && <Link to="/">Home</Link>}
           <span>Welcome, {user.name}</span>
           <Link to="/" onClick={handleLogOut}>Log Out</Link>
-          </>
-        : 
+        </>
+        :
         <>
           {location.pathname !== '/login' && <Link to="/login">Log In/Sign Up</Link>}
           {location.pathname !== '/' && <Link to="/">Home</Link>}

@@ -10,7 +10,7 @@ import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  
+
   return (
     <main className="App">
       <div className="banner">CRUST & CRUMB</div>
@@ -19,11 +19,11 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         {user ?
           <>
-            <Route path="/starters" element={<StarterData user={user} />} />  
+            <Route path="/starters" element={<StarterData user={user} />} />
             <Route path="/photos" element={<MyPhotosPage />} />
-            <Route path="/*" element={<Navigate to="/starters" /> }/>
+            <Route path="/*" element={<Navigate to="/starters" />} />
           </>
-          : 
+          :
           <>
             <Route path="/login" element={<AuthPage setUser={setUser} />} />
             <Route path="/*" element={<Navigate to="/login" />} />

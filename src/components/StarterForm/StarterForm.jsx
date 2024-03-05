@@ -19,43 +19,43 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         createdOn: initialData.createdOn,
       });
     } else {
-      setStarterData({ 
-        name: '', 
-        notes: '', 
+      setStarterData({
+        name: '',
+        notes: '',
         flours: '',
         feedingSchedule: '',
-        createdOn: '', 
+        createdOn: '',
       })
     }
   }, [initialData]);
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-      setStarterData(prevData => ({
+    setStarterData(prevData => ({
       ...prevData,
       [name]: value,
     }));
-   };
-  
+  };
+
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     onSubmit(starterData);
-    setStarterData({name: '', notes: '', flours: '', createdOn: ''});
+    setStarterData({ name: '', notes: '', flours: '', createdOn: '' });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>Name</label>
-      <input 
+      <input
         name="name"
-        type="text" 
-        value={starterData.name} 
-        onChange={handleChange} 
-        required 
+        type="text"
+        value={starterData.name}
+        onChange={handleChange}
+        required
       />
       <label>Notes</label>
-      <textarea 
+      <textarea
         name="notes"
         value={starterData.notes}
         onChange={handleChange}
@@ -68,7 +68,7 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         onChange={handleChange}
       />
       <label>Feeding Schedule</label>
-      <select 
+      <select
         name="feedingSchedule"
         value={starterData.feedingSchedule}
         onChange={handleChange}
@@ -81,11 +81,11 @@ export default function StarterForm({ onSubmit, initialData = null }) {
         <option value="Bi-Weekly">Every 2 weeks</option>
       </select>
       <label>Created On Date</label>
-      <input 
+      <input
         type="date"
         name="createdOn"
         value={starterData.createdOn}
-        onChange={handleChange} 
+        onChange={handleChange}
       />
       <button type="submit">Add</button>
     </form>

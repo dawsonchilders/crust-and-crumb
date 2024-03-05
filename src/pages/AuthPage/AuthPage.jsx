@@ -1,6 +1,6 @@
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import {useState} from 'react'
+import { useState } from 'react'
 
 export default function AuthPage({ setUser }) {
 
@@ -18,7 +18,7 @@ export default function AuthPage({ setUser }) {
         {showLogin ? 'Sign Up' : 'Login'}
       </button>
       {showLogin ? (
-        <LoginForm setUser={setUser}/>
+        <LoginForm setUser={setUser} />
       ) : (
         <SignUpForm setUser={setUser} />
       )}

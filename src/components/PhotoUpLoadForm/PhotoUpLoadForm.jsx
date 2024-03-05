@@ -6,7 +6,7 @@ export default function PhotoUploadForm({ onUploadSuccess }) {
   const [title, setTitle] = useState('');
   const fileInputRef = useRef();
 
-  
+
   async function handleUpload() {
     const formData = new FormData();
     formData.append('title', title);
@@ -23,11 +23,11 @@ export default function PhotoUploadForm({ onUploadSuccess }) {
 
   return (
     <div className="photo-upload-container">
-    <section className="photo-upload-box">
-      <input type="file" ref={fileInputRef} className="file-input" />
-      <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" className="text-input" />
-      <button onClick={handleUpload} className="upload-btn">Upload</button>
-    </section>
+      <section className="photo-upload-box">
+        <input type="file" ref={fileInputRef} className="file-input" />
+        <input value={title} onChange={(evt) => setTitle(evt.target.value)} placeholder="Photo Title" className="text-input" />
+        <button onClick={handleUpload} className="upload-btn">Upload</button>
+      </section>
     </div>
   );
 }

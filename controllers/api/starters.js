@@ -10,10 +10,10 @@ module.exports = {
 async function create(req, res) {
   try {
     const user = req.user._id;
-    const starterData = {...req.body, user};
+    const starterData = { ...req.body, user };
     const starter = await Starter.create(starterData);
     res.json(starter);
-  } catch(err) {
+  } catch (err) {
     res.status(400).json(err)
   }
 }
@@ -22,16 +22,16 @@ async function index(req, res) {
   try {
     const starters = await Starter.find({ user: req.user._id }).sort('-createdAt');
     res.json(starters);
-  } catch(err) {
+  } catch (err) {
     res.status(400).json(err)
   }
 }
 
 async function update(req, res) {
   try {
-    const updatedStarter = await Starter.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    const updatedStarter = await Starter.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(updatedStarter);
-  } catch(err) {
+  } catch (err) {
     res.status(400).json(err);
   }
 }

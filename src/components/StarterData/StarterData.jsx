@@ -8,9 +8,9 @@ export default function StarterData({ user }) {
   useEffect(() => {
     const fetchStarters = async () => {
       if (user) {
-      const fetchedStarters = await startersApi.getAll();
-      setStarters(fetchedStarters);
-     }
+        const fetchedStarters = await startersApi.getAll();
+        setStarters(fetchedStarters);
+      }
     };
     fetchStarters();
   }, [user]);
@@ -22,21 +22,21 @@ export default function StarterData({ user }) {
 
   async function updateStarter(starterId, updatedData) {
     const updatedStarter = await startersApi.updateStarter(starterId, updatedData);
-    setStarters(prevStarters => 
+    setStarters(prevStarters =>
       prevStarters.map(starter => starter._id === starterId ? updatedStarter : starter)
     );
   };
 
   async function deleteStarter(starterId) {
     await startersApi.deleteStarter(starterId);
-    setStarters(prevStarters => 
+    setStarters(prevStarters =>
       prevStarters.filter(starter => starter._id !== starterId)
     );
   }
 
   return (
     <>
-      <MyStartersPage 
+      <MyStartersPage
         starters={starters}
         addStarter={addStarter}
         updateStarter={updateStarter}

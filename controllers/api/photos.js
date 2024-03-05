@@ -8,7 +8,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const photos = await Photo.find({user: req.user._id}).sort('-createdAt').exec();
+  const photos = await Photo.find({ user: req.user._id }).sort('-createdAt').exec();
   res.json(photos);
 }
 
