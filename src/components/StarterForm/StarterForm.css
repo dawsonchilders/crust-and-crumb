@@ -56,5 +56,8 @@
 
 .starter-form .grid-container .notes textarea {
   flex-grow: 1;
+}
 
+.starter-actions .starter-form {
+  width: 100%;
 }

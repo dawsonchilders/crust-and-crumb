@@ -30,10 +30,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
-.starter-actions {
-  display: flex;
-}
-
 .starter-actions button {
   flex: 1;
 }
@@ -67,6 +63,7 @@
 
 .starter-actions {
   grid-area: actions;
+  display: flex;
 }
 
 .starter-box h4 {
@@ -83,4 +80,8 @@
   border-radius: 5px;
   margin-bottom: 10px;
   text-align: left;
+}
+
+.starter-notes {
+  white-space: pre-wrap;
 }
