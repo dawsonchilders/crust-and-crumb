@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import { useState } from 'react'
+import './AuthPage.css'
 
 export default function AuthPage({ setUser }) {
 
@@ -12,6 +13,7 @@ export default function AuthPage({ setUser }) {
 
   return (
     <main>
+      <div className="auth-container">
       <h1>Welcome to Crust & Crumb</h1>
       <h2>plese sign up or log in</h2>
       <button onClick={toggleForms}>
@@ -22,6 +24,7 @@ export default function AuthPage({ setUser }) {
       ) : (
         <SignUpForm setUser={setUser} />
       )}
+      </div>
     </main>
   );
 }
