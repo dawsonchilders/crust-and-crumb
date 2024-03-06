@@ -9,8 +9,8 @@ Crust & Crumb is dedicated to baking sourdough bread. Right now you can add a st
 # Screen Shots
 ![](public/Images/home-page.jpeg)
 ![](public/Images/login-form.jpeg)
-![](public/Images/starter-page.jpeg)
 ![](public/Images/photo-page.jpeg)
+![](public/Images/starter-page.jpeg)
 
 <br>
 
