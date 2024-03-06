@@ -21,7 +21,7 @@ export default function MyPhotosPage() {
   }
 
   return (
-    <div>
+    <div className="photos-page">
       <h1>My Photos</h1>
       <div className="my-photos-container">
         <PhotoUploadForm onUploadSuccess={handleUploadSuccess} />

@@ -18,7 +18,7 @@ export default function MyStartersPage({ starters, addStarter, updateStarter, de
   }
 
   return (
-    <div>
+    <div className="starters-page">
       <h1>My Starters</h1>
       <button onClick={toggleForm}>{showForm ? 'Hide' : 'Add Starter'}</button>
       {showForm && <StarterForm onSubmit={addStarter} />}
