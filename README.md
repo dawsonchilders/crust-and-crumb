@@ -2,7 +2,7 @@
 
 # Crust & Crumb
 
-Crust & Crumb is dedicated to baking sourdough bread. Right now you can add a starter, along with the details of its compositio, and track its progress with notes, as well as upload photo's. In the future we want to become a one stop resource for baking sourdough bread.
+Crust & Crumb is dedicated to baking sourdough bread. Right now you can add a starter, along with the details of its composition, and track its progress with notes, as well as upload photo's. In the future we want to become a one stop resource for baking sourdough bread.
 
 <br>
 

@@ -78,6 +78,7 @@ export default function StarterForm({ onSubmit, initialData = null }) {
             <option value="8 hours">Every 8 hours</option>
             <option value="10 hours">Every 10 hours</option>
             <option value="12 hours">Every 12 hours</option>
+            <option value="24 hours">Every 24 hours</option>
             <option value="Weekly">Every week</option>
             <option value="Bi-Weekly">Every 2 weeks</option>
           </select>
