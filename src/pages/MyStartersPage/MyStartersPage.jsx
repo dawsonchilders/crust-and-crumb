@@ -30,28 +30,6 @@ export default function MyStartersPage({ starters, addStarter, updateStarter, de
             <div className="starter-schedule"><span className="starter-label">Feeding Schedule:</span> {starter.feedingSchedule}</div>
             <div className="starter-created"><span className="starter-label">Created On Date:</span> {starter.createdOn && new Date(starter.createdOn).toDateString()}</div>
             <div className="starter-notes"><span className="starter-label">Notes: </span> {starter.notes}</div>
-            {/* <label>Name</label>
-            <div>{starter.name}</div>
-            {starter.notes && 
-            <>
-              <label>Notes</label>
-              <div>{starter.notes}</div>
-            </>}
-            {starter.flours && 
-            <>
-              <label>Flours Used</label>
-              <div>{starter.flours}</div>
-            </>}
-            {starter.feedingSchedule && 
-            <>
-              <label>Feeding Schedule</label>
-              <div>{starter.feedingSchedule}</div>
-            </>}
-            {starter.createdOn && 
-            <>
-              <label>Created On Date</label>
-              <div>{starter.createdOn && new Date(starter.createdOn).toDateString()}</div>
-            </>} */}
             <div className="starter-actions">
               {editStarterId !== starter._id && (
                 <>

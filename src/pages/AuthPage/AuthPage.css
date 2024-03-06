@@ -4,6 +4,7 @@
   margin: 0;
   min-height: 100vh;
   overflow: hidden;
+  padding-top: 200px;
 }
 
 .auth-container::before {
@@ -13,7 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/public/background-image.png');
+  background-image: url('/public/Images/background-image.png');
   background-size: cover;
   opacity: 0.5;
   z-index: -1;

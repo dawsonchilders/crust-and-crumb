@@ -1,14 +1,15 @@
-.photo-card { 
-  border: 1px solid #FFFFFF; 
+.photo-card {
+  border: 1px solid #FFFFFF;
   border-radius: 5px;
-  overflow: hidden; 
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: #2D2D30;
 }
 
 .photo-card img {
   max-width: 300px;
-  max-height: 300px; 
+  max-height: 300px;
   height: auto;
-  width: auto; 
-  border-radius: 8px; 
+  width: auto;
+  border-radius: 8px;
 }

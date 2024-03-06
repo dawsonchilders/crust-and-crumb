@@ -1,13 +1,8 @@
-//Service modules export business/app logic
-//such as managing tokents, etc
-// service modules often depend on API modules
-// for making AJAX requests to the server
-
-import * as usersAPI from './users-api';
+import * as usersApi from './users-api';
 
 
 export async function signUp(userData) {
-  const token = await usersAPI.signUp(userData);
+  const token = await usersApi.signUp(userData);
   localStorage.setItem('token', token);
   return getUser();
 }
@@ -17,7 +12,7 @@ export function logOut() {
 }
 
 export async function login(userData) {
-  const token = await usersAPI.login(userData);
+  const token = await usersApi.login(userData);
   localStorage.setItem('token', token);
   return getUser();
 }

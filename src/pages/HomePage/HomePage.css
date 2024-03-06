@@ -13,9 +13,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/public/background-image.png');
+  background-image: url('/public/Images/background-image.png');
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: -1;
 }
 
@@ -23,8 +23,11 @@
   max-width: 600px;
   margin: 20px auto;
   border-radius: 10px;
-  background-color: rgba(0, 0,0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
 }
 
-
+.home-container h1 {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}

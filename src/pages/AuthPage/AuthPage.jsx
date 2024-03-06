@@ -14,16 +14,14 @@ export default function AuthPage({ setUser }) {
   return (
     <main>
       <div className="auth-container">
-      <h1>Welcome to Crust & Crumb</h1>
-      <h2>plese sign up or log in</h2>
-      <button onClick={toggleForms}>
-        {showLogin ? 'Sign Up' : 'Login'}
-      </button>
-      {showLogin ? (
-        <LoginForm setUser={setUser} />
-      ) : (
-        <SignUpForm setUser={setUser} />
-      )}
+        <button onClick={toggleForms}>
+          {showLogin ? 'Sign Up' : 'Login'}
+        </button>
+        {showLogin ? (
+          <LoginForm setUser={setUser} />
+        ) : (
+          <SignUpForm setUser={setUser} />
+        )}
       </div>
     </main>
   );
